@@ -8,11 +8,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#define TAP_SHIFT(_name_,                   \
-                  _bindings_)               \
+#define TAP_SHIFT(_name_, _bindings_)       \
 _name_: tap_shift_##_name_ {                \
     compatible = "zmk,behavior-mod-morph";  \
-    label = <_name_>;                       \
     bindings = <_bindings_>;                \
     #binding-cells = <0>;                   \
     mods = <(MOD_LSFT|MOD_RSFT)>;           \
