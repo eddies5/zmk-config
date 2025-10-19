@@ -20,8 +20,8 @@ _name_: tap_shift_##_name_ {                \
 
 / {
     behaviors {
-        TAP_SHIFT(lbrcs, <&kp LEFT_BRACKET> <&kp LEFT_BRACE>)
-        TAP_SHIFT(rbrcs, <&kp RIGHT_BRACKET> <&kp RIGHT_BRACE>)
+        TAP_SHIFT(lbrcs, &kp LEFT_BRACKET &kp LEFT_BRACE)
+        TAP_SHIFT(rbrcs, &kp RIGHT_BRACKET &kp RIGHT_BRACE)
     };
 
     keymap {
