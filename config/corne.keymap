@@ -37,6 +37,9 @@ _name_: tap_shift_##_name_ {                \
         TAP_SHIFT(rbrcs,     &kp RIGHT_BRACKET &kp RIGHT_BRACE)
         TAP_SHIFT(ticktilde, &kp GRAVE &kp TILDE)
         TAP_SHIFT(dashunder, &kp MINUS &kp UNDER)
+        // raise layer
+        TAP_SHIFT(eqpls,     &kp EQUAL &kp PLUS)
+        TAP_SHIFT(bckpipe,   &kp BSLH, &kp PIPE)
     };
 
     keymap {
@@ -64,31 +67,32 @@ _name_: tap_shift_##_name_ {                \
 
             // -----------------------------------------------------------------------------------------
             // | `~   | 1!  | 2@  | 3#  | 4$  | 5%  |   | 6^  | 7&  | 8*  | 9(  | 0)  | -_   |
-            // | CTRL |     |     |     |     |     |   | [{  |     |     |     |     |  ]}  |
-            // | SHFT |     |     |     |     |     |   |     | LFT | DWN | UP  | RGT |      |
+            // | CTRL |     |     |     |     |     |   | [{  | LFT | DWN | UP  | RGT |  ]}  |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     |     |   | ENT | SPC | ALT |
 
             bindings = <
 &ticktilde  &one    &two      &three  &four   &five      &six       &seven    &eight    &nine         &zero      &dashunder
-&kp LCTRL   &trans  &trans    &trans  &trans  &trans     &lbrcs     &trans    &trans    &trans        &trans     &rbrcs
-&kp LSHFT   &trans  &trans    &trans  &trans  &trans     &trans     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
+&kp LCTRL   &trans  &trans    &trans  &trans  &trans     &lbrcs     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &rbrcs
+&kp LSHFT   &trans  &trans    &trans  &trans  &trans     &trans     &trans    &trans    &trans        &trans     &trans
                     &kp LGUI  &trans  &trans  &kp RET    &kp SPACE  &kp RALT
             >;
         };
 
         raise_layer {
             display-name = "Raise Layer";
+            | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  | ESC |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // |      |     |     |     |     | ESC |   |     |     |     |     |     |  =+  |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |  \|  |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | GUI |     |     |   | ENT | SPC | ALT |
 
             bindings = <
-&kp TAB     &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp ESC          &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans           &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+&trans      &trans        &trans        &trans        &trans        &kp ESC          &trans     &trans     &trans     &trans    &trans    &eqpls
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &trans     &trans     &trans     &trans    &trans    &bckpipe
+&kp LSHFT   &trans        &trans        &trans        &trans        &trans           &trans     &trans     &trans     &trans    &trans    &trans
                                         &kp LGUI      &trans        &trans           &kp RET    &kp SPACE  &kp RALT
             >;
         };
