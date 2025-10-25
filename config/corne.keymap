@@ -39,7 +39,7 @@ _name_: tap_shift_##_name_ {                \
         TAP_SHIFT(dashunder, &kp MINUS &kp UNDER)
         // raise layer
         TAP_SHIFT(eqpls,     &kp EQUAL &kp PLUS)
-        TAP_SHIFT(bckpipe,   &kp BSLH, &kp PIPE)
+        TAP_SHIFT(bckpipe,   &kp BSLH &kp PIPE)
     };
 
     keymap {
